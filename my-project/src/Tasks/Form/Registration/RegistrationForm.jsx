@@ -9,9 +9,7 @@ import PhoneInput from 'react-phone-input-2'
 import axios from 'axios'
 // import emailjs from '@emailjs/browser';
 import 'react-phone-input-2/lib/style.css'
-// import { auth } from '../../Firebase/Firebase'
 import "../../CSS/Registration.css";
-// import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import { useAuth } from '../../Context/ContextProvider';
 
 const RegistrationForm = () => {
@@ -24,8 +22,6 @@ const RegistrationForm = () => {
   const [otpInput, setOtpInput] = useState("");
   const [generatedOtp, setGeneratedOtp] = useState(null);
   const [isVerified, setIsVerified] = useState(false);
-  // const [isPhoneNumberVerified] = useState(false)
-  // const [phoneOtpInput, setPhoneOtpInput] = useState("")
   const { USER_URL } = useAuth()
   const navigate = useNavigate();
   const checkEmailExists = async (email, phone) => {
@@ -167,44 +163,6 @@ const RegistrationForm = () => {
     }
   };
 
-  // const captchaVerify = () => {
-
-  //   if (!window.recaptchaVerifier) {
-  //     window.recaptchaVerifier = new RecaptchaVerifier(auth, "recaptcha", {
-  //       size: "invisible",
-  //       callback: () => {
-  //         console.log("Recaptcha Verified");
-  //       },
-  //       "expired-callback": () => {
-  //         console.error("Recaptcha expired, please refresh.");
-  //       }
-  //     })
-  //   }
-  // };
-
-  // const sendOTPonPhone = async () => {
-  //   if (!PhoneNumber) {
-  //     toast("Please enter your phone number");
-  //     return;
-  //   }
-
-  //   console.log("raw number:", PhoneNumber)
-
-  //   captchaVerify()
-
-  //   const appVerifier = window.recaptchaVerifier;
-
-  //   try {
-  //     const formattedPhoneNumber = `+${PhoneNumber.replace(/\D/g, '')}`;
-  //     console.log("Formatted Phone Number:", formattedPhoneNumber);
-  //     const confirmationResult = await signInWithPhoneNumber(auth, formattedPhoneNumber, appVerifier);
-  //     setPhoneOtpModalVisible(true)
-  //     console.log(confirmationResult)
-  //   } catch (error) {
-  //     console.error("Error during signInWithPhoneNumber", error);
-  //     toast("Error sending OTP. Please try again.");
-  //   }
-  // }
 
 
   return (
@@ -386,21 +344,6 @@ const RegistrationForm = () => {
           </div>
         </div>
       )}
-      {/* {phoneOtpModalVisible && (
-        <div className="otp-modal fixed inset-0 flex justify-center items-center bg-black bg-opacity-50">
-          <div className="otp-box bg-white p-6 rounded shadow-lg text-center">
-            <h2 className="text-xl font-bold mb-4">Enter Phone OTP</h2>
-            <input
-              type="text"
-              value={phoneOtpInput}
-              onChange={(e) => setPhoneOtpInput(e.target.value)}
-              className="border p-2 mb-4 w-full"
-              placeholder="Enter the OTP"
-            />
-            <button className="bg-purple-800 text-white p-2 rounded" >Verify Phone OTP</button>
-          </div>
-        </div>
-      )} */}
     </>
   );
 };
