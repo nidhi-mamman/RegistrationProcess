@@ -16,8 +16,8 @@ server.use(express.json());
 
 server.use("/api/user", userRouter);
 
-server.get('/api/hello',(req,res)=>{
-  res.send("hi")
+server.get('/',(req,res)=>{
+  res.send("Welcome to server-side API")
 })
 
 //database connection
