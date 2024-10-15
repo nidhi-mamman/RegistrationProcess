@@ -10,6 +10,7 @@ export const ContextProvider = (props) => {
     const [isLoading, setIsLoading] = useState(true)  // Track loading state
     const authorizationToken = `Bearer ${token}`
     const USER_URL = 'https://registration-process-yce2.vercel.app/api/user'
+    // const USER_URL='http://localhost:8080/api/user'
     let isLoggedIn = !!token
 
     const userAuthentication = async () => {
