@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.Toastify__toast {
+  background-color: plum !important; /* Background color of the toast container */
+  color: white !important;
+  border: 2px solid white;
+}
+
+/* Toast body styling */
+.Toastify__toast-body {
+  color: white !important; /* Text color inside the toast body */
+}
+
+.Toastify__close-button {
+  color: white !important; /* Change close button color */
+  font-size: 20px !important; /* Change close button font size */
+  opacity: 1 !important; /* Ensure button is fully opaque */
+}
+
+/* Hover state for the close button */
+.Toastify__close-button:hover {
+  color: red !important; /* Change color on hover */
+  opacity: 1 !important; /* Ensure button is fully opaque on hover */
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px white inset, 3px 3px 2px plum !important; /* Keep your custom box-shadow */
+  box-shadow: 0 0 0px 1000px white inset, 3px 3px 2px plum !important;
+  -webkit-text-fill-color: black !important;
+  color: black !important;
+}

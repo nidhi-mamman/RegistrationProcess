@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.form-sec {
+  background-color: white;
+  height: 30rem;
+  width: 25rem;
+  z-index: 1000;
+  border-radius: 10px;
+  margin-right: -5rem;
+  box-shadow: 2px 2px 2px 3px plum;
+}
+
+.form-sec form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding:1rem;
+}
+
+.form-sec form .email-input {
+  display: flex;
+  text-align: left;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.form-sec form .password-input {
+  display: flex;
+  text-align: left;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.form-sec form label {
+  margin-top: 1rem;
+  margin-right: 1rem;
+}
+
+.form-sec form .email-input input {
+  width: 14rem;
+  height: 3rem;
+  border: none;
+  outline: none;
+  box-shadow: 2px 2px 2px 2px plum;
+  border-radius: 5px;
+  padding: 8px;
+}
+
+.form-sec form .password-input input {
+  width: 14rem;
+  height: 3rem;
+  border: none;
+  outline: none;
+  box-shadow: 2px 2px 2px 2px plum;
+  border-radius: 5px;
+  padding: 8px;
+}
+
+.img-section img {
+  border-radius: 20px;
+  height: 32rem;
+  width: 28rem;
+  z-index: 1;
+}
+
+.loginbtn {
+  height: 3rem;
+  width: 10rem;
+  margin-top: 2rem;
+  margin-left: 1.5rem;
+  border-radius: 5px;
+  background-color: plum;
+}

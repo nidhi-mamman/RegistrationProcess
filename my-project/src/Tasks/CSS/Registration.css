@@ -1,0 +1,82 @@
+.image-section img {
+  width: 35rem;
+  height: 35rem;
+}
+
+.form-section {
+  width: 35rem;
+  height: 35rem;
+}
+
+.form-section label {
+  font-weight: 700;
+}
+
+.form-section .name .firstName input,
+.form-section .name .lastName input {
+  height: 2rem;
+  border: none;
+  outline: none;
+  margin-top: 0.5rem;
+  box-shadow: 3px 3px 2px plum;
+}
+
+.form-section .mobile,
+.form-section .email,
+.form-section .gender {
+  width: 25rem;
+  margin-top: 0.5rem;
+  margin-left: 3.3rem;
+}
+
+.form-section .passw {
+  width: 25rem;
+  margin-top: 0.5rem;
+  margin-left: 2.6rem;
+}
+
+.form-section .mobile input,
+.form-section .passw input {
+  height: 2rem;
+  border: none;
+  outline: none;
+  margin-top: 0.5rem;
+  box-shadow: 3px 3px 2px plum;
+}
+
+.form-section .gender input {
+  height: 1rem;
+  width: 1rem;
+  margin: 0.5rem;
+}
+
+.form-section .email input {
+  width: 20rem;
+  height: 2rem;
+  border: none;
+  outline: none;
+  margin-top: 0.5rem;
+  box-shadow: 3px 3px 2px plum;
+}
+
+
+
+.react-tel-input .form-control{
+  width:25rem;
+  border-radius: 0px;
+}
+
+.submitbtn {
+  height: 3rem;
+  width: 10rem;
+  margin-top: 1rem;
+  background-color: plum;
+}
+
+.verify {
+  width: 8rem;
+  height: 2.5rem;
+  color:white;
+  box-shadow: 3px 3px 2px rgb(184, 92, 184);
+  background: rgb(147, 48, 147);
+}
