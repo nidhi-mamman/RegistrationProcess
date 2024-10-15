@@ -7,7 +7,7 @@ const server = express();
 
 //middlewares
 const corsOptions = {
-  origin: "https://traineeship-tasks-yh7i.vercel.app",
+  origin: "https://registration-process.vercel.app",
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true,
 };
