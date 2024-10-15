@@ -1,4 +1,4 @@
-import { useAuth } from "../../../Context/ContextProvider"
+import { useAuth } from "../../Context/ContextProvider"
 
 const Thankyou = () => {
     const {user}=useAuth()

@@ -8,7 +8,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useRef } from 'react';
 import { toast } from 'react-toastify';
-import { useAuth } from '../../../Context/ContextProvider';
+import { useAuth } from '../../Context/ContextProvider';
 
 const Login = () => {
     const [isVisible, setisVisible] = useState()

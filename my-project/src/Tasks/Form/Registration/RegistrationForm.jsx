@@ -12,7 +12,7 @@ import 'react-phone-input-2/lib/style.css'
 // import { auth } from '../../Firebase/Firebase'
 import "../../CSS/Registration.css";
 // import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
-import { useAuth } from './../../../Context/ContextProvider';
+import { useAuth } from '../../Context/ContextProvider';
 
 const RegistrationForm = () => {
   const formRef = useRef(null);
