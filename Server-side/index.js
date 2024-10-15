@@ -16,6 +16,10 @@ server.use(express.json());
 
 server.use("/api/user", userRouter);
 
+server.get('/hello',(rea,res)=>{
+  res.send("hi")
+})
+
 //database connection
 connectDB();
 
