@@ -30,7 +30,7 @@ const RegistrationForm = () => {
   const navigate = useNavigate();
   const checkEmailExists = async (email, phone) => {
     try {
-      const response = await axios.post(`${USER_URL}check-unique`, {
+      const response = await axios.post(`${USER_URL}/check-unique`, {
         email: email,
         phoneNumber: phone
       });
