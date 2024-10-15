@@ -7,7 +7,7 @@ const server = express();
 
 //middlewares
 const corsOptions = {
-  origin: ["https://registration-process.vercel.app","http://localhost:5173"],
+  origin: ["https://registrationprocess.onrender.com","http://localhost:5173"],
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true,
 };
