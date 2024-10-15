@@ -16,7 +16,7 @@ server.use(express.json());
 
 server.use("/api/user", userRouter);
 
-server.get('/hello',(rea,res)=>{
+server.get('/hello',(req,res)=>{
   res.send("hi")
 })
 
