@@ -130,38 +130,7 @@ const RegistrationForm = () => {
       }
     }
   };
-  // const sendOTP = () => {
-  //   let otp_val = Math.floor(Math.random() * 10000)
-  //   setGeneratedOtp(otp_val);
-  //   let emailBody = `Your OTP is ${otp_val}`
-  //   if (!email) {
-  //     toast("Please enter an email address");
-  //     return;
-  //   }
-  //   window.Email.send({
-  //     SecureToken: "376045d4-d368-49ec-b242-5ebd8b5bd870",
-  //     To: email,
-  //     From: "nidhimamman3@gmail.com",
-  //     Subject: "Email Verification with OTP",
-  //     Body: emailBody
-  //   }).then(() => {
-  //     toast('Your OTP has been sent');
-  //     setOtpModalVisible(true)
-  //   }).catch((error) => {
-  //     toast("Failed to send OTP. Please try again.");
-  //     console.error(error);
-  //   });
 
-  // }
-  // const verifyOTP = () => {
-  //   if (otpInput === String(generatedOtp)) {
-  //     setIsVerified(true);
-  //     setOtpModalVisible(false);
-  //     toast("OTP verified successfully!");
-  //   } else {
-  //     toast("Invalid OTP. Please try again.");
-  //   }
-  // };
   const sendOTP = async (e) => {
     e.preventDefault();
     const otp_val = Math.floor(100000 + Math.random() * 900000);
@@ -178,7 +147,7 @@ const RegistrationForm = () => {
         (response) => {
           console.log('SUCCESS!', response.status, response.text);
           toast('OTP has been sent to your email!');
-          setOtpModalVisible(true); // Show OTP modal for input
+          setOtpModalVisible(true); 
         },
         (error) => {
           console.log('FAILED...', error);
@@ -186,8 +155,6 @@ const RegistrationForm = () => {
         }
       );
   };
-
-  // Function to verify OTP
   const verifyOTP = () => {
     if (otpInput === String(generatedOtp)) {
       setIsVerified(true);
