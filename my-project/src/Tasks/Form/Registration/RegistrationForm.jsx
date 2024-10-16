@@ -7,7 +7,7 @@ import { IoEyeOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import PhoneInput from 'react-phone-input-2'
 import axios from 'axios'
-// import emailjs from '@emailjs/browser';
+import emailjs from '@emailjs/browser';
 import 'react-phone-input-2/lib/style.css'
 import "../../CSS/Registration.css";
 import { useAuth } from '../../Context/ContextProvider';
@@ -130,39 +130,73 @@ const RegistrationForm = () => {
       }
     }
   };
-  const sendOTP = () => {
-    let otp_val = Math.floor(Math.random() * 10000)
-    setGeneratedOtp(otp_val);
-    let emailBody = `Your OTP is ${otp_val}`
-    if (!email) {
-      toast("Please enter an email address");
-      return;
-    }
-    window.Email.send({
-      SecureToken: "376045d4-d368-49ec-b242-5ebd8b5bd870",
-      To: email,
-      From: "nidhimamman3@gmail.com",
-      Subject: "Email Verification with OTP",
-      Body: emailBody
-    }).then(() => {
-      toast('Your OTP has been sent');
-      setOtpModalVisible(true)
-    }).catch((error) => {
-      toast("Failed to send OTP. Please try again.");
-      console.error(error);
-    });
+  // const sendOTP = () => {
+  //   let otp_val = Math.floor(Math.random() * 10000)
+  //   setGeneratedOtp(otp_val);
+  //   let emailBody = `Your OTP is ${otp_val}`
+  //   if (!email) {
+  //     toast("Please enter an email address");
+  //     return;
+  //   }
+  //   window.Email.send({
+  //     SecureToken: "376045d4-d368-49ec-b242-5ebd8b5bd870",
+  //     To: email,
+  //     From: "nidhimamman3@gmail.com",
+  //     Subject: "Email Verification with OTP",
+  //     Body: emailBody
+  //   }).then(() => {
+  //     toast('Your OTP has been sent');
+  //     setOtpModalVisible(true)
+  //   }).catch((error) => {
+  //     toast("Failed to send OTP. Please try again.");
+  //     console.error(error);
+  //   });
 
-  }
+  // }
+  // const verifyOTP = () => {
+  //   if (otpInput === String(generatedOtp)) {
+  //     setIsVerified(true);
+  //     setOtpModalVisible(false);
+  //     toast("OTP verified successfully!");
+  //   } else {
+  //     toast("Invalid OTP. Please try again.");
+  //   }
+  // };
+  const sendOTP = async (e) => {
+    e.preventDefault();
+    const otp_val = Math.floor(100000 + Math.random() * 900000);
+    setGeneratedOtp(otp_val);
+
+    const emailParams = {
+      to_email: email,
+      otp: otp_val,
+    };
+
+    emailjs
+      .send('service_7ngq2kk', 'template_laudxjr', emailParams, 'xpnibksB0Nnza04Ou')
+      .then(
+        (response) => {
+          console.log('SUCCESS!', response.status, response.text);
+          toast('OTP has been sent to your email!');
+          setOtpModalVisible(true); // Show OTP modal for input
+        },
+        (error) => {
+          console.log('FAILED...', error);
+          toast('Failed to send OTP. Please try again.');
+        }
+      );
+  };
+
+  // Function to verify OTP
   const verifyOTP = () => {
     if (otpInput === String(generatedOtp)) {
       setIsVerified(true);
-      setOtpModalVisible(false);
       toast("OTP verified successfully!");
+      setOtpModalVisible(false);
     } else {
       toast("Invalid OTP. Please try again.");
     }
   };
-
 
 
   return (
